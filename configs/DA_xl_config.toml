@@ -1,0 +1,27 @@
+model_path = "/root/ILLUSTRIOUS"
+dataset_folder = ""
+output_dir = "output"
+
+mixed_precision = "bf16"
+lr = 1e-5
+batch_size = 2 
+resolution = 1280
+max_train_steps = 2000
+lr_scheduler = "cosine"
+num_warmup_steps = 200
+model_save_steps = 400
+dataloader_num_workers = 4
+
+lora_rank = 128
+lora_alpha = 128
+
+# ARB 配置
+arb_min_dim = 512
+arb_max_dim = 1536
+arb_step_size = 256
+
+# Direct-Align 配置
+[direct_align]
+timestep_min_ratio = 0.2
+timestep_max_ratio = 0.8
+prior_strength = 1.3
