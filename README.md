@@ -1,6 +1,7 @@
 # FALumina
 
 ## 环境配置
+项目使用*python3.11*搭建
 ```
 pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 \
   --extra-index-url https://mirrors.tuna.tsinghua.edu.cn/pytorch-wheels/cu118 # 国内用户
