@@ -1,4 +1,7 @@
 # FALumina
+一个暂时只支持SDXL模型(E预测)的`DirectAlign`训练方法的脚本
+## 开源模型
+[DirectAlign Mitigates Reward Tampering LoRA](https://civitai.com/models/2112333/directalign-mitigates-reward-tampering-lora) `2000 steps`验证模型
 
 ## 环境配置
 项目使用*python3.11*搭建
