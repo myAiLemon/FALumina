@@ -1,0 +1,8 @@
+deepspeed
+
+diffusers
+transformers
+peft
+datasets
+pillow
+lpips

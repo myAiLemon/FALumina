@@ -1,0 +1,42 @@
+[model]
+# 您的SDXL VAE模型路径，支持.safetensors和.bin
+vae_path = "/path/to/your/vae"
+
+# LoRA适配器的秩（Rank）
+lora_rank = 16
+
+# LoRA权重保存路径
+save_path = "/path/to/save"
+
+# 每隔多少步保存一次LoRA权重
+# 总步数 = save_steps*epochs
+save_steps = 100
+
+[data]
+# 包含1536p或2048p高分辨率图像的目录
+image_dir = "/root/sd-data/vae/resized_1024"
+
+# 从高分辨率图像中裁剪出的图块（Patch）分辨率
+patch_resolution = 1024
+
+[training]
+epochs = 5
+
+micro_batch_size = 1
+gradient_accumulation_steps = 2
+learning_rate = 1e-5
+log_steps = 50
+warmup_steps = 50
+# 预估的总训练步数 (用于LR scheduler)，脚本会自动计算
+# (num_images / (micro_batch_size * world_size * grad_accum)) * epochs
+total_num_steps = 100000 # 脚本会覆盖这个值，这里只是占位
+
+[loss]
+# 是否使用L1损失（或多尺度L1）
+use_l1_loss = true
+l1_weight = 1.0
+# 是否使用多尺度L1损失（会覆盖 use_l1_loss）
+use_multi_scale_loss = true
+# 是否使用LPIPS感知损失
+use_perceptual_loss = true
+perceptual_weight = 0.1
